@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ data, updateScore, updateBestScore, resetScore }) {
+function Card({ data, updateScore, updateBestScore, resetScore, shuffleCards }) {
   const [current, setCurrent] = React.useState([])
 
   function handleClick(e) {
@@ -9,17 +9,19 @@ function Card({ data, updateScore, updateBestScore, resetScore }) {
       updateBestScore()
       resetScore()
       setCurrent([])
-      return;
+    } else {
+      setCurrent([...current, name])
+      updateScore()
     }
-    setCurrent([...current, name])
-    updateScore()
+
+    shuffleCards()
     return;
   }
 
   return data ? (
-    data.map((person, index) => (
+    data.map((person) => (
      <button
-     key={index}
+     key={person.id}
      data-name={person.name} 
      className="h-max w-[20vw] border-blue-100 border-2 rounded-lg flex flex-col p-1 bg-blue-600 hover:cursor-pointer"
      onClick={handleClick}>
