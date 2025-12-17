@@ -54,11 +54,9 @@ function App() {
     }, [])
 
     return (
-        <div className="">
-            <div>
-                <Header score={score} bestScore={bestScore}/>
-            </div>
-            <div className=" h-full w-full flex gap-7 flex-wrap justify-center">
+        <>
+            <Header score={score} bestScore={bestScore}/>
+            <div className=" h-full w-full flex gap-7 flex-wrap justify-center mb-5">
                 <Card 
                 data={cardData} 
                 updateScore={updateScore} 
@@ -66,7 +64,7 @@ function App() {
                 updateBestScore={updateBestScore}
                 shuffleCards={shuffleCards}/>
             </div>
-        </div>
+        </>
     )
 }
 
