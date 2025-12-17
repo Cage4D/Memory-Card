@@ -27,7 +27,7 @@ function Card({ data, updateScore, updateBestScore, resetScore, shuffleCards }) 
      onClick={handleClick}>
        <img src={person.image} alt={person.name} className="rounded-sm"/>
        <div className="flex justify-center py-3">
-         <p>{person.name}</p>
+         <p className="text-white">{person.name}</p>
        </div>
      </button>
    ))
