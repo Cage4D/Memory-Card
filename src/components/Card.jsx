@@ -23,7 +23,7 @@ function Card({ data, updateScore, updateBestScore, resetScore, shuffleCards }) 
      <button
      key={person.id}
      data-name={person.name} 
-     className="h-max w-[20vw] border-blue-100 border-2 rounded-lg flex flex-col p-1 bg-blue-600 hover:cursor-pointer"
+     className="h-max w-[20vw] rounded-lg flex flex-col p-1 bg-blue-600 hover:cursor-pointer"
      onClick={handleClick}>
        <img src={person.image} alt={person.name} className="rounded-sm"/>
        <div className="flex justify-center py-3">
