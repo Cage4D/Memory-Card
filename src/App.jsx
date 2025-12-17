@@ -21,6 +21,22 @@ function App() {
         setBestScore(score)
     }
 
+    function shuffleArray(array) {
+        const shuffled = [...array]
+
+        for (let i = 0; i < shuffled.length - 1; i++) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+        }
+
+        return shuffled;
+    }
+
+    function shuffleCards() {
+        setCardData((prev) => shuffleArray(prev))
+    }
+
+
     React.useEffect(() => {
         async function getData() {
             try {
@@ -47,7 +63,8 @@ function App() {
                 data={cardData} 
                 updateScore={updateScore} 
                 resetScore={resetScore}
-                updateBestScore={updateBestScore}/>
+                updateBestScore={updateBestScore}
+                shuffleCards={shuffleCards}/>
             </div>
         </div>
     )
