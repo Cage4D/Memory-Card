@@ -17,6 +17,7 @@ function App() {
     }
 
     function updateBestScore() {
+        if (score < bestScore) return;
         setBestScore(score)
     }
 
@@ -37,12 +38,16 @@ function App() {
     }, [])
 
     return (
-        <div>
+        <div className="">
             <div>
                 <Header score={score} bestScore={bestScore}/>
             </div>
             <div className=" h-full w-full flex gap-7 flex-wrap justify-center">
-                <Card data={cardData}/>
+                <Card 
+                data={cardData} 
+                updateScore={updateScore} 
+                resetScore={resetScore}
+                updateBestScore={updateBestScore}/>
             </div>
         </div>
     )
