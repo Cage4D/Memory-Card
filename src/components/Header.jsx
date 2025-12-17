@@ -1,7 +1,7 @@
 
 function Header({ score, bestScore }) {
     return (
-        <nav className="flex flex-col items-center pt-5 pb-10 gap-2">
+        <nav className="sticky top-0 flex flex-col items-center py-5 mb-10 gap-2 bg-blue-600 text-white">
             <h2 className="">Rick and Morty Memory Game</h2>
             <div className="flex justify-center gap-2 whitespace-nowrap">
                 <p className="flex-1">Score: {score}</p>
